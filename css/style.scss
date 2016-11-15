@@ -1,0 +1,87 @@
+@import "variables";
+
+@mixin verticalcenter {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin center {
+  width: 60%;
+  margin: 0 auto;
+}
+
+@mixin texttreat {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  color: #3c4242;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  padding: 0px;
+  margin: 0px
+}
+
+header {
+  background: $blue;
+  overflow:hidden;
+  height: 130px;
+
+  ul {
+    @include verticalcenter;
+    @include center;
+  }
+
+    li {
+      @include verticalcenter;
+      float:left;
+      list-style-type: none;
+      padding: 23px;
+    }
+
+      a {
+        color: #3c4242;
+        font-size: 13px;
+        @include texttreat;
+      }
+
+      a:hover {
+        color: $salmon;
+        text-decoration: underline;
+      }
+}
+
+.hero {
+  background: orange;
+  height: 600px;
+  clear: both;
+
+    .hero-text {
+      @include verticalcenter;
+      text-align: center;
+    }
+
+      h1 {
+        @include texttreat;
+        font-size: 65px;
+        font-weight: lighter;
+      }
+
+      h3 {
+        @include texttreat;
+        font-size: 20px;
+        font-weight: lighter;
+      }
+}
+
+
+.banner {
+  background: #d3795f;
+  height: 200px;
+}
